@@ -6,6 +6,10 @@
     <title>About Me</title>
     <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
     <header>
@@ -44,11 +48,69 @@
                 <p>Feel free to reach out to me if you're interested in collaborating, have any questions, or just want to say hi!</p>
                 <p>Email me at: <a href="mailto:edc46@pitt.edu">edc46@pitt.edu</a></p>
             </section>
+
+            <section class="travel-map-section">
+                <h3>Where I've Traveled</h3>
+                <div id="map" style="height: 500px;"></div>
+            </section>            
         </div>
     </div>
 
     <footer>
         <p>&copy; 2025 Elyse Chess. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Initialize the map and set the center and zoom level
+        var map = L.map('map').setView([37.8, -96], 4); // Coordinates of the center of the US
+        
+        // Add a tile layer to the map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        
+        // Locations 
+        var travelLocations = [
+            {
+                lat: 32.2540, // Tuscon
+                lon: 110.9742,
+                title: "Tuscon, Arizona",
+                description: "I've always loved the desert.",
+                images: ["images/tuscon-1.jpg", "images/tuscon-2.jpg"]
+            },
+            {
+                lat: 18.4153, // San Juan
+                lon: 66.0594,
+                title: "San Juan, Puerto Rico",
+                description: "Beautiful, but unbelievably hot.",
+                images: ["images/san-juan-1.jpg", "images/san-juan-2.jpg"]
+            },
+            {
+                lat: 41.8781, // Chicago
+                lon: -87.6298,
+                title: "Chicago, Illinois",
+                description: "For WE24 national conference.",
+                images: ["images/chicago1.jpg", "images/chicago-2.jpg"]
+            }
+        ];
+        
+        // Loop through the travelLocations array and add a marker for each location
+        travelLocations.forEach(function(location) {
+            var marker = L.marker([location.lat, location.lon]).addTo(map);
+            
+            // Create a pop-up content with a title, description, and an image collage
+            var popupContent = `
+                <h4>${location.title}</h4>
+                <p>${location.description}</p>
+                <div>
+                    ${location.images.map(img => `<img src="${img}" alt="image" style="width: 100px; margin: 5px;">`).join('')}
+                </div>
+            `;
+            
+            // Bind the pop-up content to the marker
+            marker.bindPopup(popupContent);
+        });
+        </script>
+        
 </body>
 </html>

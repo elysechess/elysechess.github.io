@@ -103,3 +103,25 @@ footer {
 footer p {
     margin: 0;
 }
+
+/* For map on About Me*/
+#map {
+    width: 100%; /* Make the map container take the full width */
+    height: 500px; /* Adjust height as needed */
+}
+
+.travel-map-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.travel-map-section h3 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.popup img {
+    width: 80px; /* Control the size of images in the popup */
+    margin: 5px;
+    border-radius: 4px;
+}
