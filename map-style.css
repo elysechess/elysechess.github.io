@@ -1,9 +1,9 @@
 /* Map container */
 .map-container {
     position: relative;
-    width: 600px;   /* Width of the map */
-    height: 400px;  /* Height of the map */
-    background-image: url('images/static-map.jpg'); /* Path to your static map image */
+    width: 600px;  
+    height: 400px;  
+    background-image: url('images/map.jpg'); 
     background-size: cover;
     background-position: center;
 }
