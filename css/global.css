@@ -21,6 +21,29 @@ header h1 {
     font-size: 2rem;
 }
 
+/* Navigation bar styles */
+header nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 10px 0 0 0; /* Add margin to space it below the header title */
+    display: flex; /* Align links horizontally */
+    justify-content: center; /* Center the links */
+}
+
+header nav ul li {
+    margin: 0 20px; /* Adds space between links */
+}
+
+header nav ul li a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove the underline */
+    font-weight: bold; /* Make the text bold */
+}
+
+header nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
 /* Footer styles */
 footer {
     background-color: #333;
