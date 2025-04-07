@@ -104,7 +104,7 @@
         
         // Loop through the travelLocations array and add a marker for each location
         travelLocations.forEach(function(location) {
-            var marker = L.marker([location.lat, location.lon]).addTo(map);
+            var marker = L.marker([location.lat, location.lon], { icon: redPinIcon }).addTo(map); 
             
             // Create a pop-up content with a title, description, and an image collage
             var popupContent = `
