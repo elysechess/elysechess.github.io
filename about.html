@@ -4,12 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
-    <!-- Link to the external CSS file -->
-    <link rel="stylesheet" href="styles.css">
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="styles.css">  <!-- Link to your main styles.css -->
+    <link rel="stylesheet" href="map.css">     <!-- Link to the map-specific styles -->
 </head>
 <body>
     <header>
@@ -26,7 +22,6 @@
         <div class="main-content">
             <h2>Hello, I'm Elyse!</h2>
             <p>I'm a third-year computer engineering student at the University of Pittsburgh.</p>
-
             <p>info info info blah blah blah</p>
 
             <section class="skills-section">
@@ -37,9 +32,6 @@
                     <li>Computer Vision (OpenCV)</li>
                     <li>Being in charge of stuff</li>
                     <li>Blah blah</li>
-                    <li>Blah</li>
-                    <li>Blah</li>
-                    <li>Blah</li>
                 </ul>
             </section>
 
@@ -51,7 +43,15 @@
 
             <section class="travel-map-section">
                 <h3>Where I've Traveled</h3>
-                <div id="map" style="height: 500px;"></div>
+                <div class="map-container" id="map">
+                    <!-- Marker divs -->
+                    <div class="marker" id="marker-1" data-info="Tucson, Arizona" style="top: 35%; left: 25%;" onclick="showPopup(event, 1)"></div>
+                    <div class="marker" id="marker-2" data-info="San Juan, Puerto Rico" style="top: 60%; left: 50%;" onclick="showPopup(event, 2)"></div>
+                    <div class="marker" id="marker-3" data-info="Chicago, Illinois" style="top: 45%; left: 70%;" onclick="showPopup(event, 3)"></div>
+                    
+                    <!-- Popup -->
+                    <div id="popup" class="popup"></div>
+                </div>
             </section>            
         </div>
     </div>
@@ -61,53 +61,29 @@
     </footer>
 
     <script>
-        // Initialize the map and set the center and zoom level
-        var map = L.map('map').setView([37.8, -96], 4); // Coordinates of the center of the US
-        
-        // Add a tile layer to the map
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        // Custom icon
-        var redPinIcon = L.icon({
-            iconUrl: 'images/map-icon.png', 
-            iconSize: [32, 32], 
-            iconAnchor: [16, 52], 
-            popupAnchor: [0, 0] 
-        });
-        
-        // Locations 
-        var travelLocations = [
+        const locations = [
             {
-                lat: 32.2540, // Tuscon
-                lon: -110.9742,
-                title: "Tuscon, Arizona",
-                description: "I've always loved the desert.",
-                images: ["images/tuscon-1.jpg", "images/tuscon-2.jpg"]
+                title: "Tucson, Arizona",
+                images: ["images/tucson-1.jpg", "images/tucson-2.jpg"],
             },
             {
-                lat: 18.4153, // San Juan
-                lon: -66.0594,
                 title: "San Juan, Puerto Rico",
-                description: "Beautiful, but unbelievably hot.",
-                images: ["images/san-juan-1.jpg", "images/san-juan-2.jpg"]
+                images: ["images/san-juan-1.jpg", "images/san-juan-2.jpg"],
             },
             {
-                lat: 41.8781, // Chicago
-                lon: -87.6298,
                 title: "Chicago, Illinois",
-                description: "For WE24 national conference.",
-                images: ["images/chicago-1.jpg", "images/chicago-2.jpg"]
+                images: ["images/chicago-1.jpg", "images/chicago-2.jpg"],
             }
         ];
-        
-        // Loop through the travelLocations array and add a marker for each location
-        travelLocations.forEach(function(location) {
-            var marker = L.marker([location.lat, location.lon], { icon: redPinIcon }).addTo(map); 
-            
-            // Create a pop-up content with a title, description, and an image collage
-            var popupContent = `
+
+        // Show the popup with information when a marker is clicked
+        function showPopup(event, markerIndex) {
+            const popup = document.getElementById("popup");
+            const location = locations[markerIndex - 1];  // Get the location data by index
+            const marker = event.target;
+
+            // Set the popup content
+            popup.innerHTML = `
                 <h4>${location.title}</h4>
                 <p>${location.description}</p>
                 <div>
@@ -115,10 +91,21 @@
                 </div>
             `;
             
-            // Bind the pop-up content to the marker
-            marker.bindPopup(popupContent);
-        });
-        </script>
-        
+            // Position the popup near the marker
+            const markerPosition = marker.getBoundingClientRect();
+            popup.style.left = (markerPosition.left + window.scrollX + 40) + 'px';
+            popup.style.top = (markerPosition.top + window.scrollY - 20) + 'px';
+
+            // Show the popup
+            popup.style.display = "block";
+        }
+
+        // Hide the popup when clicking outside of the map or on a different marker
+        window.onclick = function(event) {
+            if (!event.target.matches('.marker')) {
+                document.getElementById("popup").style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

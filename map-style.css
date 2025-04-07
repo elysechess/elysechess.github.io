@@ -1,0 +1,32 @@
+/* Map container */
+.map-container {
+    position: relative;
+    width: 600px;   /* Width of the map */
+    height: 400px;  /* Height of the map */
+    background-image: url('images/static-map.jpg'); /* Path to your static map image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Marker style */
+.marker {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;  /* Color of the marker */
+    border-radius: 50%;     /* Round marker */
+    cursor: pointer;
+}
+
+/* Popup style */
+.popup {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: none;
+    max-width: 250px;
+    z-index: 999;
+}
