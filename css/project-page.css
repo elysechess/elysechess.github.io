@@ -15,13 +15,13 @@
 .slider {
     display: flex;
     width: 400%;  /* 4 images, each 100% width */
-    animation: slideAnimation 20s infinite;
+    animation: slideAnimation 20s linear infinite;
 }
 
 .slide {
-    width: 100%; 
+    width: 100%; /* Each image takes 100% width of the slider */
     object-fit: cover;
-    height: 300px; 
+    height: 300px; /* Adjust the height based on your design */
 }
 
 /* Slide animation for auto sliding effect */
@@ -72,4 +72,17 @@
     color: #666;
     line-height: 1.6;
     font-weight: 400;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;  /* Adjust margin to prevent overlap */
+}
+
+footer p {
+    margin: 0;
 }
