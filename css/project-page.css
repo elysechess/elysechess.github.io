@@ -21,7 +21,7 @@
 .slide {
     flex: 0 0 50%; /* Each image takes up 100% of the container's width */
     object-fit: cover;
-    height: 300px; 
+    height: 400px; 
 }
 
 /* Slide animation for smooth sliding effect */
