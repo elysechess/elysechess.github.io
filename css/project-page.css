@@ -6,32 +6,45 @@
     color: #333;
 }
 
-.imagecarousel {
-    position: relative;
-    height: 233px;
-    margin-bottom: 30px;
+/* Image Slider Section */
+.slider-wrapper {
+    overflow: hidden;
+    margin-top: 30px;
+    width: 200%; /* Make sure the container doesn't overflow */
+}
+
+.slider {
     display: flex;
-    width: fit-content;
-    gap: 20px;
-  }
-  
-  .imagecarousel img {
-    margin: 0px 0px;
-    box-shadow: 2px 2px 8px #8a8a8a;
-  }
-  
-  .imagecarousel {
-    animation: bannermove 50s linear infinite;
-  }
-  
-  @keyframes bannermove {
+    animation: slideAnimation 40s linear infinite; /* 40s for smooth sliding */
+}
+
+.slide {
+    flex: 0 0 100%; /* Each image takes up 100% of the container's width */
+    object-fit: cover;
+    height: 400px; 
+}
+
+/* Slide animation for smooth sliding effect */
+@keyframes slideAnimation {
     0% {
-      transform: translateX(0);
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-100%);
+    }
+    40% {
+        transform: translateX(-200%);
+    }
+    60% {
+        transform: translateX(-300%);
+    }
+    80% {
+        transform: translateX(-400%);
     }
     100% {
-      transform: translateX(-50%);
+        transform: translateX(0);
     }
-  }
+}
 
 /* Description and Video Section */
 .content {
