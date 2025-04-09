@@ -10,29 +10,39 @@
 .slider-wrapper {
     overflow: hidden;
     margin-top: 30px;
-    width: 100%; /* Full width of the container */
-    position: relative;
+    width: 100%; /* Make sure the container doesn't overflow */
 }
 
 .slider {
     display: flex;
-    width: 100%; /* Make the slider take up full width */
-    animation: slideAnimation 30s linear infinite; /* 30s for smooth sliding */
+    animation: slideAnimation 40s linear infinite; /* 40s for smooth sliding */
 }
 
 .slide {
     flex: 0 0 50%; /* Each image takes up 100% of the container's width */
     object-fit: cover;
-    height: 300px; /* Adjust height as necessary */
+    height: 300px; 
 }
 
 /* Slide animation for smooth sliding effect */
 @keyframes slideAnimation {
     0% {
-        transform: translateX(0); /* Start at the first image */
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-100%);
+    }
+    40% {
+        transform: translateX(-200%);
+    }
+    60% {
+        transform: translateX(-300%);
+    }
+    80% {
+        transform: translateX(-400%);
     }
     100% {
-        transform: translateX(-100%); /* Shift the images to the left */
+        transform: translateX(0);
     }
 }
 
