@@ -23,27 +23,28 @@ header h1 {
 
 /* Navigation bar styles */
 header nav ul {
-    list-style: none;
+    list-style: none; /* Remove bullet points */
     padding: 0;
-    margin: 10px 0 0 0; 
-    display: flex; 
-    justify-content: center; 
+    margin: 10px 0 0 0; /* Add margin to space it below the header title */
+    display: flex; /* Align links horizontally */
+    justify-content: center; /* Center the links */
 }
 
 header nav ul li {
-    margin: 0 20px; 
+    margin: 0 20px; /* Adds space between links */
 }
 
 header nav ul li a {
-    color: #fff; 
-    text-decoration: none;
-    font-weight: bold; 
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove the underline */
+    font-weight: bold; /* Make the text bold */
 }
 
 header nav ul li a:hover {
-    text-decoration: underline; 
+    text-decoration: underline; /* Underline on hover */
 }
 
+/* Footer styles */
 footer {
     background-color: #333;
     color: #fff;
@@ -58,28 +59,7 @@ footer p {
     margin: 0;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.container {
-    flex-grow: 1;
-    padding: 20px; 
-}
-
-footer {
-    background-color: #333; 
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    width: 100%;
-}
-
+/* Container to center the content */
 .container {
     width: 80%;
     margin: 0 auto;
