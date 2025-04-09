@@ -1,26 +1,26 @@
-/* General body styles */
+/* Reset styles for html and body to ensure full height */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
+/* Body as a flex container */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack header, main content, and footer */
 }
 
-/* Container to center the content */
+/* Ensure that the container takes up the available space */
 .container {
-    flex-grow: 1;
+    flex-grow: 1; /* Take up remaining space */
+    padding: 20px;
     width: 80%;
     margin: 0 auto;
-    padding: 20px;
-    overflow: hidden;
 }
 
 /* Header styles */
@@ -59,7 +59,7 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Footer at the bottom of the page */
+/* Footer styles */
 footer {
     background-color: #333;
     color: #fff;
