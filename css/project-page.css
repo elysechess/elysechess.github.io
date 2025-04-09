@@ -19,7 +19,7 @@
 }
 
 .slide {
-    flex: 0 0 100%; /* Each image takes up 100% of the container's width */
+    flex: 0 0 50%; /* Each image takes up 100% of the container's width */
     object-fit: cover;
     height: 300px; 
 }
@@ -75,17 +75,4 @@
     color: #666;
     line-height: 1.6;
     font-weight: 400;
-}
-
-/* Footer styles */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 15px;
-    margin-top: 50px;  /* Adjust margin to prevent overlap */
-}
-
-footer p {
-    margin: 0;
 }
