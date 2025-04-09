@@ -10,39 +10,36 @@
 .slider-wrapper {
     overflow: hidden;
     margin-top: 30px;
-    width: 100%; /* Make sure the container doesn't overflow */
+    width: 100%; /* Ensure the container doesn't overflow */
 }
 
 .slider {
     display: flex;
-    animation: slideAnimation 40s linear infinite; /* 40s for smooth sliding */
+    width: 400%; /* All images will fit in this width (4 images = 100% * 4) */
+    animation: slideAnimation 20s linear infinite; /* Adjust the duration for smoothness */
 }
 
 .slide {
-    flex: 0 0 50%; /* Each image takes up 100% of the container's width */
+    flex: 0 0 25%; /* Each image takes up 25% of the width (4 images in total) */
     object-fit: cover;
     height: 300px; 
 }
 
-/* Slide animation for smooth sliding effect */
 @keyframes slideAnimation {
     0% {
         transform: translateX(0);
     }
-    20% {
-        transform: translateX(-100%);
+    25% {
+        transform: translateX(-25%);
     }
-    40% {
-        transform: translateX(-200%);
+    50% {
+        transform: translateX(-50%);
     }
-    60% {
-        transform: translateX(-300%);
-    }
-    80% {
-        transform: translateX(-400%);
+    75% {
+        transform: translateX(-75%);
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(-100%);
     }
 }
 
