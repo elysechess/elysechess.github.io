@@ -20,7 +20,7 @@
 }
 
 .slide {
-    flex: 0 0 50%; /* Each image takes up 25% of the width (4 images in total) */
+    flex: 0 0 25%; /* Each image takes up 25% of the width (4 images in total) */
     object-fit: cover;
     height: 300px; 
 }
