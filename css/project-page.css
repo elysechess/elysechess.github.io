@@ -6,42 +6,54 @@
     color: #333;
 }
 
-/* Image Slider Section */
 .slider-wrapper {
     overflow: hidden;
     margin-top: 30px;
-    width: 100%; /* Ensure the container doesn't overflow */
+    width: 100%;
 }
 
 .slider {
     display: flex;
-    width: 25%; /* CHANGED All images will fit in this width (4 images = 100% * 4) */ 
-    animation: slideAnimation 20s linear infinite; /* Adjust the duration for smoothness */
+    width: 400%; /* 4 images x 100% = 400% total width */
+    animation: slideAnimation 20s linear infinite;
 }
 
 .slide {
-    flex: 0 0 25%; /* Each image takes up 25% of the width (4 images in total) */
+    flex: 0 0 25%; /* Each image = 25% of the .slider width */
     object-fit: cover;
-    height: 300px; 
+    height: 300px;
 }
 
 @keyframes slideAnimation {
     0% {
-        transform: translateX(0);
+        transform: translateX(0%);
+    }
+    20% {
+        transform: translateX(0%);
     }
     25% {
+        transform: translateX(-25%);
+    }
+    45% {
         transform: translateX(-25%);
     }
     50% {
         transform: translateX(-50%);
     }
+    70% {
+        transform: translateX(-50%);
+    }
     75% {
         transform: translateX(-75%);
     }
+    95% {
+        transform: translateX(-75%);
+    }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(0%);
     }
 }
+
 
 /* Description and Video Section */
 .content {
