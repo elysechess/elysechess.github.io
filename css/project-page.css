@@ -7,52 +7,33 @@
 }
 
 .slider-wrapper {
-    overflow: hidden;
-    margin-top: 30px;
-    width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
 }
 
-.slider {
-    display: flex;
-    width: 400%; /* 4 images x 100% = 400% total width */
-    animation: slideAnimation 20s linear infinite;
+.slider-track {
+  display: inline-flex;
+  animation: scroll-left 60s linear infinite;
 }
 
-.slide {
-    flex: 0 0 25%; /* Each image = 25% of the .slider width */
-    object-fit: cover;
-    height: 300px;
+.slider-track img {
+  width: auto;
+  height: 300px;
+  margin-right: 10px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-@keyframes slideAnimation {
-    0% {
-        transform: translateX(0%);
-    }
-    20% {
-        transform: translateX(0%);
-    }
-    25% {
-        transform: translateX(-25%);
-    }
-    45% {
-        transform: translateX(-25%);
-    }
-    50% {
-        transform: translateX(-50%);
-    }
-    70% {
-        transform: translateX(-50%);
-    }
-    75% {
-        transform: translateX(-75%);
-    }
-    95% {
-        transform: translateX(-75%);
-    }
-    100% {
-        transform: translateX(0%);
-    }
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
+
 
 
 /* Description and Video Section */
