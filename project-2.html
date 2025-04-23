@@ -9,11 +9,13 @@
   <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
   <style>
     .demo-section {
-      display: flex;
-      align-items: center;     /* vertical alignment */
-      justify-content: center; /* horizontal spacing */
-      height: 500px;           /* or whatever height you want */
-      gap: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    height: 500px;
+    padding: 2rem;
+    box-sizing: border-box;
     }
 
     .demo-box {
@@ -26,6 +28,7 @@
     box-sizing: border-box;
     }
 
+    /* Left side: upload input + prediction stacked & centered */
     .upload-side {
     display: flex;
     align-items: center;
@@ -41,8 +44,8 @@
     }
 
     #upload {
-    cursor: pointer;
     margin-bottom: 1rem;
+    cursor: pointer;
     }
 
     #prediction {
@@ -50,6 +53,7 @@
     text-align: center;
     }
 
+    /* Right side: canvas vertically centered */
     .preview-side {
     display: flex;
     align-items: center;
@@ -63,6 +67,15 @@
     height: 300px;
     image-rendering: pixelated;
     }
+
+    /* ✅ This keeps your description next to the demo box */
+    .description {
+    flex: 1 1 45%;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    }
+
 
   </style>
 </head>
@@ -93,17 +106,26 @@
         </div>
       </div>
 
-      <div class="demo-box">
-        <div class="upload-side">
-          <div class="upload-wrapper">
-            <input type="file" accept="image/*" id="upload" />
-            <p id="prediction">Prediction will appear here.</p>
+      <div class="demo-section">
+        <div class="demo-box">
+          <div class="upload-side">
+            <div class="upload-wrapper">
+              <input type="file" accept="image/*" id="upload" />
+              <p id="prediction">Prediction will appear here.</p>
+            </div>
+          </div>
+          <div class="preview-side">
+            <canvas id="canvas" width="30" height="30"></canvas>
           </div>
         </div>
-        <div class="preview-side">
-          <canvas id="canvas" width="30" height="30"></canvas>
+      
+        <div class="description">
+          <p>
+            A Convolutional Neural Network (CNN) trained on the German Traffic Sign Recognition Benchmark (GTSRB) dataset. It is modeled after the LeNet CNN architecture and implemented using the PyTorch machine learning library. To test the model, upload an image!
+          </p>
         </div>
       </div>
+      
   </div>
 
   <script type="module">
