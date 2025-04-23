@@ -27,7 +27,7 @@
 </head>
 <body>
   <header>
-    <h1>Elevator</h1>
+    <h1>Traffic</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -38,29 +38,44 @@
 
   <div class="container">
     <section>
-      <h2>Traffic Sign Classifier</h2>
-      <p>This project is a Convolutional Neural Network built to classify traffic signs using the GTSRB dataset. You can test it live below:</p>
 
-      <div class="demo-box">
-        <input type="file" accept="image/*" id="upload" />
-        <canvas id="canvas" width="30" height="30"></canvas>
-        <p id="prediction">Prediction will appear here.</p>
-      </div>
+        <!-- Image Slider Section -->
+        <div class="slider-wrapper">
+          <div class="slider">
+          <img class="slide" src="images/traffic-1.jpg" alt="Image 1">
+          <img class="slide" src="images/traffic-2.jpg" alt="Image 2">
+          <img class="slide" src="images/traffic-3.png" alt="Image 3">
+          <img class="slide" src="images/traffic-4.png" alt="Image 4">
+            
+          <!-- Duplicate images for seamless wraparound -->
+          <img class="slide" src="images/traffic-1.jpg" alt="Image 1 duplicate">
+          <img class="slide" src="images/traffic-2.jpg" alt="Image 2 duplicate">
+          <img class="slide" src="images/traffic-3.png" alt="Image 3 duplicate">
+          <img class="slide" src="images/traffic-4.png" alt="Image 4 duplicate">
+          </div>
+        </div>
+        <p>This project is a Convolutional Neural Network built to classify traffic signs using the GTSRB dataset. You can test it live below:</p>
+
+        <div class="demo-box">
+            <input type="file" accept="image/*" id="upload" />
+            <canvas id="canvas" width="30" height="30"></canvas>
+            <p id="prediction">Prediction will appear here.</p>
+        </div>
     </section>
   </div>
 
   <script type="module">
     const CATEGORY_KEY = [
-      "20 km/h", "30 km/h", "50 km/h", "60 km/h", "70 km/h", "80 km/h",
-      "end 80 km/h", "100 km/h", "120 km/h", "no passing", "no passing (> 3.5 mt)",
-      "right of way", "priority road", "yield", "stop", "no vehicles",
-      "no vehicles > 3.5 mt", "no entry", "caution", "watch curve left",
-      "watch curve right", "double curve", "bumpy road", "slippery road",
-      "road narrows right", "road work", "traffic signals", "pedestrians",
-      "children crossing", "bicycles crossing", "ice/snow", "wild animals crossing",
-      "end of speed/passing limits", "turn right ahead", "turn left ahead",
-      "ahead only", "straight or right", "straight or left", "keep right",
-      "keep left", "roundabout", "end no passing", "end no passing (> 3.5 mt)"
+      "Speed Limit: 20 km/h", "Speed Limit: 30 km/h", "Speed Limit: 50 km/h", "Speed Limit: 60 km/h", "Speed Limit: 70 km/h", "Speed Limit: 80 km/h",
+      "End Speed Limit: 80 km/h", "Speed Limit: 100 km/h", "Speed Limit: 120 km/h", "No Passing", "No Passing (Vehicles Heavier than 3.5 Metric Tons)",
+      "Right of Way", "Priority Road", "Yield", "Stop", "No Vehicles",
+      "No Vehicles Heavier than 3.5 Metric Tons", "No Entry", "Caution", "Watch Curve Left",
+      "Watch Curve Right", "Double Curve", "Bumpy Road", "Slippery Road",
+      "Road Narrows Right", "Road Work", "Traffic Signals", "Pedestrians",
+      "Children Crossing", "Bicycles Crossing", "Ice/Snow", "Wild Animals Crossing",
+      "End Speed/Passing Limit", "Turn Right Ahead", "Turn Left Ahead",
+      "Ahead Only", "Straight or Right", "Straight or Left", "Keep Right",
+      "Keep Left", "Roundabout", "End No Passing", "End No Passing (Vehicles Heavier than 3.5 Metric Tons)"
     ];
 
     const model = await ort.InferenceSession.create("model.onnx");
