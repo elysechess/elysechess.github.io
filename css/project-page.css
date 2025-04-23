@@ -66,3 +66,31 @@
     line-height: 1.6;
     font-weight: 400;
 }
+
+.demo-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .demo-box {
+    flex: 1 1 45%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+  }
+  
+  canvas {
+    border: 1px solid #000;
+    margin-top: 1rem;
+    width: 150px;
+    height: 150px;
+    image-rendering: pixelated;
+  }
+  
+  #prediction {
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
