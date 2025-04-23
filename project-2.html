@@ -3,14 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Traffic</title>
+  <title>Elevator</title>
   <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/project-page.css" />
   <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+  <style>
+    .demo-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .demo-box {
+      flex: 1 1 45%;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+    }
+
+    .description {
+      flex: 1 1 45%;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    canvas {
+      border: 1px solid #000;
+      margin-top: 1rem;
+      width: 150px;
+      height: 150px;
+      image-rendering: pixelated;
+    }
+
+    #prediction {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1 class="project-title">Traffic</h1>
+    <h1>Traffic</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -43,8 +77,8 @@
         </div>
         <div class="description">
           <h2>Project Overview</h2>
-          <p>This project is a Convolutional Neural Network built to classify traffic signs using the GTSRB dataset. It's trained using PyTorch and converted to ONNX to run directly in the browser using ONNX Runtime Web.</p>
-          <p>The model supports 43 traffic sign classes. Upload a sign image to test it live!</p>
+          <p>This project is a Convolutional Neural Network built to classify traffic signs using the GTSRB dataset. It's trained using PyTorch and then converted to ONNX for use in-browser with ONNX Runtime Web. Try uploading an image of a traffic sign to see how the model performs!</p>
+          <p>The model classifies 43 different traffic sign categories, including speed limits, warnings, prohibitions, and more. It’s been optimized for fast inference directly in your browser—no server required.</p>
         </div>
       </div>
     </section>
