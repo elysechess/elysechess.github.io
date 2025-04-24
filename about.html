@@ -98,6 +98,18 @@
                 lon: -87.6298,
                 title: "Chicago, Illinois",
                 images: ["images/chicago-1.jpg", "images/chicago-2.jpg"],
+            },
+            {
+                lat: 38.9072, // Washington, DC
+                lon: -77.0369,
+                title: "Washington, DC",
+                images: ["images/dc-1.jpg", "image/dc-2.jpg"],
+            },
+            {
+                lat: 37.2982, // Zion National Park, Utah
+                lon: -113.0263,
+                title: "Zion National Park, Utah",
+                images: ["images/zion-1.jpg", "images/zion-2.jpg"],
             }
         ];
 
@@ -108,7 +120,6 @@
             // Create a pop-up content with a title, description, and an image collage
             var popupContent = `
                 <h4>${location.title}</h4>
-                <p>${location.description}</p>
                 <div>
                     ${location.images.map(img => `<img src="${img}" alt="image" style="width: 100px; margin: 5px;">`).join('')}
                 </div>
