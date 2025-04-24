@@ -1,0 +1,61 @@
+/* Ensure the body and container take full width */
+body, .container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Full-width backgrounds for resume entries */
+.resume-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.resume-entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+/* Light and dark background classes for resume entries */
+.resume-entry.light-background {
+    background-color: #e0e0e0; /* Light gray */
+}
+
+.resume-entry.dark-background {
+    background-color: #ccc; /* Darker gray */
+}
+
+.resume-content {
+    flex: 3;
+    padding-right: 20px;
+}
+
+.resume-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.resume-logo img {
+    max-height: 120px;
+    max-width: 170px;
+    object-fit: contain;
+}
+
+.job-title {
+    font-size: 1.5rem;
+    margin: 0 0 5px 0;
+}
+
+.company {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.responsibilities {
+    padding-left: 20px;
+}
