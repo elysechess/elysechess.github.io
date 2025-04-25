@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bop-It!</title>
+    <link rel="stylesheet" href="css/global.css"> 
+    <link rel="stylesheet" href="css/project-page.css"> 
+</head>
+<body>
+    <header>
+        <h1>Bop-It!</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Other Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <!-- Image Slider Section -->
+        <div class="slider-wrapper">
+            <div class="slider">
+            <img class="slide" src="images/bop-it-1.jpg" alt="Image 1">
+            <img class="slide" src="images/bop-it-2.png" alt="Image 2">
+            <img class="slide" src="images/bop-it-3.jpg" alt="Image 3">
+            <img class="slide" src="images/bop-it-4.jpg" alt="Image 4">
+            
+            <!-- Duplicate images for seamless wraparound -->
+            <img class="slide" src="images/bop-it-1.jpg" alt="Image 1 duplicate">
+            <img class="slide" src="images/bop-it-2.png" alt="Image 2 duplicate">
+            <img class="slide" src="images/bop-it-3.jpg" alt="Image 3 duplicate">
+            <img class="slide" src="images/bop-it-4.jpg" alt="Image 4 duplicate">
+            </div>
+        </div>
+
+        <!-- Description and Video Section -->
+        <div class="content">
+            <div class="video">
+                <video controls playsinline autoplay muted loop style="max-height: 400px; width: auto; display: block; margin: 0 auto;">
+                    <source src="images/bop-it.MOV" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="description">
+                <p>
+                    Developed for ECE 1895: Junior Design Fundamentals. My three-person group was tasked with creating a custom Bop-It! toy that met a list of specifications involving portability, distinct user inputs, audio/visual feedback, and more. 
+                </p>
+                <p>
+                    Our Bop-It! toy is modeled after a racecar (sort of). The attached traffic light adds a "Simon Says" twist to the game: when the light is green, the user must enter the requested input within the time limit; when the light is red, the user must avoid entering any inputs. 
+                </p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="description">
+                <p>
+                    I was responsible for the software portion of the project. All code was written using the Arduino IDE for an ATMega 328P microcontroller. Here, we test the software on our newly populated PCB.
+                </p>
+            </div>
+            <div class="video">
+                <video controls playsinline autoplay muted loop style="max-height: 400px; width: auto; display: block; margin: 0 auto;">
+                    <source src="images/bop-it-2.MOV" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
