@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Other Stuff I Do</title>
+    <title>Off the Clock</title>
     <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/personal.css">
@@ -29,6 +29,13 @@
     <div class="container">
         <div class="main-content">
             <div class="content">
+
+                <section class="photo-section">
+                    <div class="photo-collage" id="photoCollage">
+                        <!-- Collage images will be dynamically placed by JavaScript -->
+                    </div>
+                </section>
+
                 <div class="description">
                     <h2>A Bit of Context</h2>
                     <p>
@@ -42,15 +49,6 @@
                     </p>
                 </div>
             </div>
-
-            <section class="photo-section">
-                <h2>My Creative Works</h2>
-                <p>A collection of my artwork, photography, and creative projects.</p>
-                
-                <div class="photo-collage" id="photoCollage">
-                    <!-- Collage images will be dynamically placed by JavaScript -->
-                </div>
-            </section>
             
             <section class="writing-section">
                 <h2>Writing Samples</h2>
@@ -167,13 +165,13 @@
 
         // Photo Collage Setup
         const collageImages = [
-            { src: 'images/artwork-1.jpg', width: 200, height: 150, top: '10%', left: '5%', rotate: '-5deg' },
-            { src: 'images/artwork-2.jpg', width: 180, height: 220, top: '15%', left: '30%', rotate: '3deg' },
-            { src: 'images/artwork-3.jpg', width: 250, height: 170, top: '5%', left: '55%', rotate: '-2deg' },
-            { src: 'images/photo-1.jpg', width: 200, height: 300, top: '40%', left: '15%', rotate: '4deg' },
-            { src: 'images/photo-2.jpg', width: 280, height: 180, top: '35%', left: '45%', rotate: '-3deg' },
-            { src: 'images/sketch-1.jpg', width: 220, height: 160, top: '60%', left: '5%', rotate: '2deg' },
-            { src: 'images/sketch-2.jpg', width: 190, height: 240, top: '50%', left: '65%', rotate: '-4deg' }
+            { src: 'images/personal-5.jpg', width: 200, height: 150, top: '10%', left: '5%', rotate: '-5deg' },
+            { src: 'images/personal-2.jpg', width: 180, height: 220, top: '15%', left: '30%', rotate: '3deg' },
+            { src: 'images/personal-4.jpg', width: 250, height: 170, top: '5%', left: '55%', rotate: '-2deg' },
+            { src: 'images/personal-1.jpg', width: 200, height: 300, top: '40%', left: '15%', rotate: '4deg' },
+            { src: 'images/personal-6.jpg', width: 280, height: 180, top: '35%', left: '45%', rotate: '-3deg' },
+            { src: 'images/personal-7.jpg', width: 220, height: 160, top: '65%', left: '35%', rotate: '2deg' },
+            { src: 'images/personal-3.jpg', width: 190, height: 240, top: '50%', left: '65%', rotate: '-4deg' }
         ];
 
         const photoCollage = document.getElementById('photoCollage');
