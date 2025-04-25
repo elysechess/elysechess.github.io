@@ -60,7 +60,19 @@
     width: 45%;
 }
 
+.description-wide {
+    width: 100%;
+}
+
 .description p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    font-weight: 400;
+    margin-bottom: 2rem; 
+}
+
+.description-wide p {
     font-size: 1.2rem;
     color: #666;
     line-height: 1.6;

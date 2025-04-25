@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber-Physical Systems</title>
+    <link rel="stylesheet" href="css/global.css"> 
+    <link rel="stylesheet" href="css/project-page.css"> 
+</head>
+<body>
+    <header>
+        <h1>Cyber-Physical Systems</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Other Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <!-- Image Slider Section -->
+        <div class="slider-wrapper">
+            <div class="slider">
+            <img class="slide" src="images/cp-1.jpg" alt="Image 1">
+            <img class="slide" src="images/cp-3.jpg" alt="Image 2">
+            <img class="slide" src="images/cp-2.jpg" alt="Image 3">
+            <img class="slide" src="images/cp-4.png" alt="Image 4">
+            
+            <!-- Duplicate images for seamless wraparound -->
+            <img class="slide" src="images/cp-1.jpg" alt="Image 1 duplicate">
+            <img class="slide" src="images/cp-3.jpg" alt="Image 2 duplicate">
+            <img class="slide" src="images/cp-2.jpg" alt="Image 3 duplicate">
+            <img class="slide" src="images/cp-4.png" alt="Image 4 duplicate">
+            </div>
+        </div>
+
+        <!-- Description and Video Section -->
+        <div class="description-wide">
+            <h2>Course Description</h2>
+            <p>
+                In the advanced Electrical and Computer Engineering elective ECE 1188: Cyber Physical Systems, students follow the journey data takes from a sensor, to a microcontroller, through a network and then to the cloud (and back!). Along the way students are exposed to a broad range of electrical and computer engineering topics including electronic design, embedded programming, digital signal processing, networking and information theory, wireless communications, antenna theory and big data analytics.  
+            </p>
+            <h2>Course Projects</h2>
+        </div>
+        <div class="content">
+            <div class="video">
+                <video controls playsinline autoplay muted loop style="max-height: 400px; width: auto; display: block; margin: 0 auto;">
+                    <source src="images/cp-1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="description">
+                <p>
+                    Testing code for Design Project 1, in which the robot was required to successfully complete a line-following exercise. It navigated the track via a reflectance sensor connected to the bottom of the chassis and a custom control algorithm.     
+                </p>
+                <p>
+                    This was a team project. To avoid overreliance on SysTick, I was responsible for refactoring a previous motor driver libary to use a hardware timer module instead of SysTick. I also assisted with code integration and testing.     
+                </p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="description">
+                <p>
+                    Demonstrating Wi-Fi functionality. The demonstration program allows the robot's motors to be started and stopped via a command sent via Wi-Fi from a mobile phone.
+                </p>
+                <p>
+                    The demonstration program was refactored from an example project using MQTT to enable message transmission. Commands were sent via a public MQTT broker.
+                </p>
+            </div>
+            <div class="video">
+                <video controls playsinline autoplay muted loop style="max-height: 400px; width: auto; display: block; margin: 0 auto;">
+                    <source src="images/cp-2.MOV" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div class="content">
+            <div class="video">
+                <video controls playsinline autoplay muted loop style="max-height: 400px; width: auto; display: block; margin: 0 auto;">
+                    <source src="images/cp-3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="description">
+                <p>
+                    Testing code for Design Project 2, in which the robot was required to successfully navigate an obstacle course. It navigated the obstacle course via a distance sensor attached to the front of the chassis, bump sensors that triggered when an obstacle was hit, and a custom control algorithm. 
+                </p>
+                <p>
+                    This was a team project. I was responsible for refactoring example Wi-Fi and distance sensor code into functions that could be easily integrated into a main file. I also assisted with integration and hardware troubleshooting.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
