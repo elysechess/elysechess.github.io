@@ -5,13 +5,14 @@ body, .container {
     padding: 0;
 }
 
-/* Full-width backgrounds for resume entries */
+/* Full-width container for resume entries */
 .resume-section {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
+/* Layout for each individual resume entry */
 .resume-entry {
     display: flex;
     align-items: center;
@@ -20,42 +21,49 @@ body, .container {
     width: 100%;
 }
 
-/* Light and dark background classes for resume entries */
+/* Light background color for alternating resume entries */
 .resume-entry.light-background {
-    background-color: #e0e0e0; /* Light gray */
+    background-color: #e0e0e0;
 }
 
+/* Darker background color for alternating resume entries */
 .resume-entry.dark-background {
-    background-color: #ccc; /* Darker gray */
+    background-color: #ccc;
 }
 
+/* Resume content column (text) */
 .resume-content {
     flex: 3;
     padding-right: 20px;
 }
 
+/* Resume logo column */
 .resume-logo {
     flex: 1;
     display: flex;
     justify-content: center;
 }
 
+/* Image styling inside logo section */
 .resume-logo img {
     max-height: 120px;
     max-width: 170px;
     object-fit: contain;
 }
 
+/* Job title text styling */
 .job-title {
     font-size: 1.5rem;
     margin: 0 0 5px 0;
 }
 
+/* Company name text styling */
 .company {
     font-weight: bold;
     margin-bottom: 10px;
 }
 
+/* Bullet list padding inside responsibilities */
 .responsibilities {
     padding-left: 20px;
 }

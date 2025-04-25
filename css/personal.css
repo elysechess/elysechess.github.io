@@ -7,18 +7,20 @@
     overflow: hidden;
 }
 
+/* Individual collage image positioning and appearance */
 .collage-image {
     position: absolute;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
 }
 
+/* Hover effect for collage images */
 .collage-image:hover {
     transform: scale(1.05);
     z-index: 10;
 }
 
-/* Carousel Styles */
+/* Carousel container styles */
 .carousel {
     position: relative;
     width: 100%;
@@ -30,6 +32,7 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+/* Inner carousel content wrapper */
 .carousel-inner {
     display: flex;
     width: 300%;
@@ -37,6 +40,7 @@
     transition: transform 0.8s ease;
 }
 
+/* Individual carousel item styles */
 .carousel-item {
     flex: 1;
     padding: 2rem;
@@ -44,6 +48,7 @@
     overflow-y: auto;
 }
 
+/* Dot navigation container */
 .carousel-dots {
     position: absolute;
     bottom: 10px;
@@ -53,6 +58,7 @@
     gap: 10px;
 }
 
+/* Carousel dot styles */
 .dot {
     width: 10px;
     height: 10px;
@@ -61,6 +67,7 @@
     cursor: pointer;
 }
 
+/* Active carousel dot style */
 .dot.active {
     background-color: #333;
 }

@@ -1,42 +1,47 @@
+/* Layout container for main content with spacing and alignment */
 .content {
-    display: flex; /* Use flexbox to align the description and image side by side */
-    justify-content: space-between; /* Space between the description and the image */
-    align-items: center; /* Vertically center them */
-    gap: 2rem; /* Space between the elements */
-    margin: 3rem 0; /* Optional: spacing around the content */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 2rem; 
+    margin: 3rem 0; 
 }
 
+/* Text: responsive width and max constraint */
 .description {
-    flex: 1 1 45%; /* Takes up 45% of the container width */
-    max-width: 600px; /* Optional: restrict the max width for text to keep it neat */
+    flex: 1 1 45%; 
+    max-width: 600px; 
 }
 
+/* Center the image horizontally */
 .image {
-    flex: 1 1 45%; /* Takes up 45% of the container width */
+    flex: 1 1 45%; 
     display: flex;
-    justify-content: center; /* Centers the image inside its container */
+    justify-content: center; 
 }
 
+/* Responsive image styling with rounded corners and shadow */
 .image img {
-    max-width: 100%; /* Makes the image responsive */
-    height: auto; /* Maintains aspect ratio */
-    border-radius: 10px; /* Optional: adds rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+    max-width: 100%;
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Styled link for contact info */
 .contact-link {
-    text-decoration: none;  /* Removes underline */
-    margin-right: 10px;     /* Adds space between icons */
-    font-size: 1.2em;        /* Optional: makes icons a bit larger */
-    color: #333;             /* Optional: sets icon color */
+    text-decoration: none;  
+    margin-right: 10px;     
+    font-size: 1.2em;        
+    color: #333;            
 }
 
+/* Hover effect for contact links */
 .contact-link:hover {
-    color: #0077b5; /* LinkedIn blue for hover effect */
+    color: #0077b5; 
 }
 
-
-/* Add these styles to center the content vertically */
+/* Full-height wrapper to center content in the viewport */
 .container {
     min-height: calc(100vh - 80px);
     display: flex;
@@ -44,13 +49,14 @@
     justify-content: center;
 }
 
+/* Main content container with full width and no overflow */
 .main-content {
     width: 100%;
     max-height: 100%;
-    overflow: hidden; /* Prevents scroll */
+    overflow: hidden; 
 }
 
-/* Ensure content fits within available space */
+/* Re-declared content layout with centered row arrangement */
 .content {
     display: flex;
     flex-direction: row;
@@ -60,31 +66,21 @@
     max-height: 100%;
 }
 
-/* Make sure image doesn't overflow */
+/* Image scaling rules for viewport height and aspect ratio */
 .image img {
-    max-height: 70vh; /* Limit height to viewport */
+    max-height: 70vh; 
     width: auto;
     object-fit: contain;
 }
 
-/* Adjust description width if needed */
+/* Limit text section width */
 .description {
     max-width: 50%;
 }
 
-/* Make page content static (no scrolling) */
+/* Disable scrolling */
 body {
     overflow: hidden;
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .content {
-        flex-direction: column;
-    }
-    
-    .description {
-        max-width: 90%;
-    }
-}
    

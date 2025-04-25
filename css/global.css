@@ -6,10 +6,9 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    /*padding-bottom: 50px;*/
 }
 
-/* Header styles */
+/* Header container styling */
 header {
     background-color: #333;
     color: #fff;
@@ -17,38 +16,41 @@ header {
     text-align: center;
 }
 
+/* Header title styles */
 header h1 {
     margin: 0;
     font-size: 2rem;
 }
 
-/* Navigation bar styles */
+/* Navigation list container inside header */
 header nav ul {
-    list-style: none; /* Remove bullet points */
+    list-style: none;
     padding: 0;
-    margin: 10px 0 0 0; /* Add margin to space it below the header title */
-    display: flex; /* Align links horizontally */
-    justify-content: center; /* Center the links */
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
 }
 
+/* Navigation list item spacing */
 header nav ul li {
-    margin: 0 20px; /* Adds space between links */
+    margin: 0 20px;
 }
 
+/* Navigation link styling */
 header nav ul li a {
-    color: #fff; /* White text color */
-    text-decoration: none; /* Remove the underline */
-    font-weight: bold; /* Make the text bold */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
+/* Navigation link hover effect */
 header nav ul li a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;
 }
 
-/* Container to center the content */
+/* Container to center the content and control width */
 .container {
     width: 80%;
     margin: 0 auto;
     overflow: hidden;
-
 }
