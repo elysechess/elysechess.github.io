@@ -38,7 +38,7 @@
 
 /* Add these styles to center the content vertically */
 .container {
-    min-height: calc(100vh - /* header height */ 80px);
+    min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
