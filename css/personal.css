@@ -1,0 +1,66 @@
+/* Photo Collage Styles */
+.photo-collage {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.collage-image {
+    position: absolute;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.collage-image:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.carousel-inner {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.8s ease;
+}
+
+.carousel-item {
+    flex: 1;
+    padding: 2rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}
