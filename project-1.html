@@ -1,3 +1,4 @@
+<!-- Metadata -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,8 @@
     <link rel="stylesheet" href="css/project-page.css"> 
 </head>
 <body>
+
+    <!-- Header -->
     <header>
         <h1>Elevator</h1>
         <nav>
@@ -19,15 +22,13 @@
 
     <div class="container">
 
-        <!-- Image Slider Section -->
+        <!-- Sliding carousel, images duplicated for seamless wraparound -->
         <div class="slider-wrapper">
             <div class="slider">
             <img class="slide" src="images/elevator-1.jpg" alt="Image 1">
             <img class="slide" src="images/elevator-3.png" alt="Image 2">
             <img class="slide" src="images/elevator-2.jpg" alt="Image 3">
             <img class="slide" src="images/elevator-4.png" alt="Image 4">
-            
-            <!-- Duplicate images for seamless wraparound -->
             <img class="slide" src="images/elevator-1.jpg" alt="Image 1 duplicate">
             <img class="slide" src="images/elevator-3.png" alt="Image 2 duplicate">
             <img class="slide" src="images/elevator-2.jpg" alt="Image 3 duplicate">
@@ -35,14 +36,17 @@
             </div>
         </div>
 
-        <!-- Description and Video Section -->
         <div class="content">
+
+            <!-- Video -->
             <div class="video">
                 <video controls playsinline autoplay muted loop>
                     <source src="images/elevator.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
+
+            <!-- Description -->
             <div class="description">
                 <p>
                     A four-floor elevator simulator developed for ECE 0202: Embedded Processors and Interfacing. An STM32 Nucleo board interfaces with pushbuttons, LEDs, a keypad scanner, and motors to replicate real-life elevator functionality. All 600+ lines of code are written in ARM assembly. 
