@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/about.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>About Me</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="resume.html">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="content">
+                <div class="image">
+                    <img src="images/me.jpg" alt="Elevator  Simulator" />
+                </div>
+                <div class="description">
+                    <h2>Hi, I'm Elyse!</h2>
+                    <p>
+                        I'm a third-year computer engineering student at the University of Pittsburgh with interests and experience in embedded systems and computer vision. I currently work as an Undergraduate Teaching Assistant for my department and a Design Engineering Intern for Pitt's IDEA lab, where I work on engineering projects for internal and external clients. This summer, I'll be interning full-time at Garmin as an embedded software engineer! I will also begin my tenure as the President of Pitt's chapter of the Society of Women Engineers (PittSWE).     
+                    </p>
+                    <p>
+                        Outside of work, I enjoy being outdoors, whether that's hiking, running, or rock climbing. I also love to read and write, and have participated in a several writing competitions over the years. 
+                    </p>
+                    <section class="contact-section">
+                        <p>Feel free to reach out to me if you're interested in collaborating, have any questions, or just want to say hi!</p>
+                        <p>
+                            <a href="mailto:edc46@pitt.edu" class="contact-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/elyse-chess" target="_blank" class="contact-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </p>
+                    </section>
+                </div>
+            </div>                  
+
+            <section class="travel-map-section">
+                <h2>Where I've Been</h2>
+                <p>
+                    I love to travel and explore new places. Hover over the markers to see the places I've visited!
+                </p>
+                <div id="map" style="height: 500px; margin-bottom: 2rem;"></div>
+            </section>            
+        </div>
+    </div>
+
+    <script>
+        // Initialize the map and set the center and zoom level
+        var map = L.map('map').setView([37.8, -96], 4); // Coordinates of the center of the US
+        
+        // Add a tile layer to the map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Custom marker
+        var redPinIcon = L.icon({
+            iconUrl: 'images/map-icon.png', 
+            iconSize: [32, 32], 
+            iconAnchor: [16, 32], 
+            popupAnchor: [0, 0] 
+        });
+
+        // Locations with coordinates and images for popups
+        var travelLocations = [
+            {
+                lat: 32.2540, // Tucson, Arizona
+                lon: -110.9742,
+                title: "Tucson, Arizona",
+                images: ["images/tucson-1.jpg", "images/tucson-2.jpg"],
+            },
+            {
+                lat: 18.4153, // San Juan, Puerto Rico
+                lon: -66.0594,
+                title: "San Juan, Puerto Rico",
+                images: ["images/san-juan-1.jpg", "images/san-juan-2.jpg"],
+            },
+            {
+                lat: 41.8781, // Chicago, Illinois
+                lon: -87.6298,
+                title: "Chicago, Illinois",
+                images: ["images/chicago-1.jpg", "images/chicago-2.jpg"],
+            },
+            {
+                lat: 38.9072, // Washington, DC
+                lon: -77.0369,
+                title: "Washington, DC",
+                images: ["images/dc-1.jpg", "images/dc-2.jpg"],
+            },
+            {
+                lat: 37.2982, // Zion National Park, Utah
+                lon: -113.0263,
+                title: "Zion National Park, Utah",
+                images: ["images/zion-1.jpg", "images/zion-2.jpg"],
+            }
+        ];
+
+        // Loop through the travelLocations array and add a marker for each location
+        travelLocations.forEach(function(location) {
+            var marker = L.marker([location.lat, location.lon], { icon: redPinIcon }).addTo(map); 
+            
+            // Create a pop-up content with a title, description, and an image collage
+            var popupContent = `
+                <h4>${location.title}</h4>
+                <div>
+                    ${location.images.map(img => `<img src="${img}" alt="image" style="width: 100px; margin: 5px;">`).join('')}
+                </div>
+            `;
+            
+            marker.bindPopup(popupContent, {
+                maxWidth: 300,  
+                minWidth: 150   
+            });
+        });
+    </script>
+</body>
+</html>
