@@ -79,14 +79,3 @@
     font-size: 1.5rem;
     font-weight: bold;
 }
-
-/* Responsive design for tablets */
-@media screen and (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .main-content h2 {
-        font-size: 1.6rem;
-    }
-}
